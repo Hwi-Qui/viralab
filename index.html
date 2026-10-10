@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VIRALAB — Services sociaux premium | Validation YouTube & TikTok monétisable</title>
+<meta name="description" content="Validation de numéro YouTube, comptes TikTok monétisables, croissance Instagram & Facebook. Service rapide, sécurisé et humain basé à Lomé, Togo.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23E62117'/%3E%3Cpath d='M26 20l20 12-20 12z' fill='%23fff'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Inter:wght@400;500;600;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+<style>
+/* ============ BASE ============ */
+:root{
+  --bg:#F6F5F2; --ink:#0B0B0C; --muted:#5D5D66; --card:#FFFFFF;
+  --red:#E62117; --red-2:#FF1A1A; --pink:#FE2C55; --cyan:#25F4EE;
+  --green:#16C46F; --wa:#1DA851; --dark:#0A0A0B; --dark-2:#141417;
+  --red-soft:#FBE3E1; --pink-soft:#FEE3E9; --cyan-soft:#DCFBF9; --black-soft:#E9E9E6;
+  --radius:22px; --shadow:0 10px 34px rgba(10,10,11,.10);
+  --font-d:'Montserrat',sans-serif; --font-b:'Inter',sans-serif; --font-h:'Caveat',cursive;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:96px}
+body{font-family:var(--font-b);background:var(--bg);color:var(--ink);line-height:1.6;overflow-x:hidden}
+::selection{background:var(--pink);color:#fff}
+img,svg{display:block}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+button{font-family:inherit;border:none;background:none;cursor:pointer}
+.container{max-width:1180px;margin:0 auto;padding:0 24px}
+.section{padding:100px 0;position:relative}
+.display{font-family:var(--font-d);font-weight:900;text-transform:uppercase;letter-spacing:-.02em;line-height:.98}
+.ic{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.icf{width:20px;height:20px;fill:currentColor;stroke:none;flex:none}
+.overline{display:inline-flex;align-items:center;gap:10px;font-family:var(--font-d);font-weight:800;font-size:.76rem;letter-spacing:.24em;text-transform:uppercase;color:var(--red)}
+.overline::before{content:"";width:30px;height:3px;background:currentColor;border-radius:2px}
+.h2{font-family:var(--font-d);font-weight:900;text-transform:uppercase;letter-spacing:-.015em;line-height:1.02;font-size:clamp(2rem,4.4vw,3.15rem);margin:14px 0 16px}
+.lead{color:var(--muted);max-width:60ch;font-size:1.05rem}
+.sec-num{position:absolute;top:34px;right:4%;font-family:var(--font-d);font-weight:900;font-size:clamp(80px,12vw,150px);color:transparent;-webkit-text-stroke:2px rgba(11,11,12,.07);line-height:1;pointer-events:none;user-select:none}
+.dark .sec-num{-webkit-text-stroke:2px rgba(255,255,255,.09)}
+
+/* ============ REVEAL ============ */
+[data-reveal]{opacity:0;transform:translateY(26px);transition:opacity .7s ease var(--d,0s),transform .7s ease var(--d,0s)}
+[data-reveal].revealed{opacity:1;transform:none}
+
+/* ============ BUTTONS ============ */
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--font-d);font-weight:800;text-transform:uppercase;letter-spacing:.03em;font-size:.9rem;padding:16px 26px;border-radius:14px;color:#fff;background:#111;transition:.25s;border:2px solid transparent}
+.btn:hover{transform:translateY(-3px)}
+.btn-red{background:linear-gradient(135deg,var(--red-2),var(--pink));box-shadow:0 14px 32px rgba(230,33,23,.32)}
+.btn-red:hover{box-shadow:0 20px 42px rgba(254,44,85,.42)}
+.btn-dark{background:var(--dark)}
+.btn-ghost{background:transparent;color:var(--ink);border-color:var(--ink)}
+.btn-ghost:hover{background:var(--ink);color:#fff}
+.btn-wa{background:var(--wa);box-shadow:0 14px 32px rgba(29,168,81,.32)}
+.btn-pink{background:var(--pink);box-shadow:0 14px 32px rgba(254,44,85,.35)}
+.btn-light{background:#fff;color:var(--dark)}
+.btn-sm{padding:11px 18px;font-size:.8rem;border-radius:12px}
+
+/* ============ HEADER ============ */
+#progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--red),var(--pink),var(--cyan));z-index:1200}
+header{position:fixed;top:0;left:0;right:0;z-index:1000;transition:.3s;background:rgba(246,245,242,.75);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+header.scrolled{background:rgba(255,255,255,.92);box-shadow:0 6px 24px rgba(10,10,11,.08)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:78px;gap:20px}
+.logo{display:flex;align-items:center;gap:11px;font-family:var(--font-d);font-weight:900;font-size:1.35rem;letter-spacing:-.02em}
+.logo-mark{width:42px;height:42px;border-radius:12px;background:linear-gradient(135deg,var(--red),var(--pink));display:grid;place-items:center;color:#fff;position:relative;box-shadow:0 8px 20px rgba(230,33,23,.35)}
+.logo-mark::after{content:"";position:absolute;right:-4px;top:-4px;width:12px;height:12px;border-radius:50%;background:var(--cyan);box-shadow:0 0 0 3px var(--bg)}
+.logo em{font-style:normal;color:var(--red)}
+.nav-links{display:flex;gap:6px;align-items:center}
+.nav-links a{font-weight:600;font-size:.93rem;padding:9px 14px;border-radius:10px;color:#3c3c44;transition:.2s;position:relative}
+.nav-links a:hover{color:var(--ink);background:rgba(11,11,12,.05)}
+.nav-links a.active{color:var(--red)}
+.nav-links a.active::after{content:"";position:absolute;left:14px;right:14px;bottom:4px;height:3px;border-radius:2px;background:linear-gradient(90deg,var(--red),var(--pink))}
+.nav-cta{display:flex;gap:10px;align-items:center}
+.burger{display:none;width:46px;height:46px;border-radius:12px;background:var(--dark);color:#fff;place-items:center}
+.mobile-menu{position:fixed;inset:0;background:var(--dark);z-index:1100;display:flex;flex-direction:column;justify-content:center;padding:40px 32px;gap:6px;transform:translateX(100%);transition:transform .45s cubic-bezier(.7,0,.3,1)}
+.mobile-menu.open{transform:none}
+.mobile-menu a{font-family:var(--font-d);font-weight:900;text-transform:uppercase;font-size:2rem;color:#fff;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+.mobile-menu a span{color:var(--pink)}
+.mobile-menu .mm-close{position:absolute;top:24px;right:24px;width:50px;height:50px;border-radius:14px;background:rgba(255,255,255,.1);color:#fff;display:grid;place-items:center}
+.mobile-menu .mm-foot{margin-top:26px;color:#9a9aa2;font-size:.95rem}
+.mobile-menu .mm-foot strong{color:var(--cyan)}
+
+/* ============ HERO ============ */
+.hero{padding:170px 0 90px;position:relative;overflow:hidden;background-image:radial-gradient(rgba(11,11,12,.055) 1px,transparent 1px);background-size:24px 24px}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:50px;align-items:center}
+.chip{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid rgba(11,11,12,.1);border-radius:999px;padding:8px 16px;font-weight:700;font-size:.8rem;box-shadow:var(--shadow)}
+.chip .icf{color:var(--pink);width:15px;height:15px}
+.hero h1{font-size:clamp(2.7rem,6vw,4.5rem);margin:22px 0 24px}
+.band{position:relative;display:inline-block;color:#fff;padding:.06em .3em .1em;transform:rotate(-2deg);isolation:isolate}
+.band::before{content:"";position:absolute;inset:-2% -1.5%;background:var(--red);z-index:-1;filter:url(#rough);border-radius:6px}
+.hero-sub{color:var(--muted);font-size:1.08rem;max-width:52ch;margin-bottom:32px}
+.hero-sub strong{color:var(--ink)}
+.hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:38px}
+.trust{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.avatars{display:flex}
+.avatars span{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:.8rem;color:#fff;border:3px solid var(--bg);margin-left:-10px;font-family:var(--font-d)}
+.avatars span:first-child{margin-left:0}
+.trust-txt{font-size:.9rem;color:var(--muted)}
+.trust-txt strong{color:var(--ink);display:block;font-size:.95rem}
+.stars{display:flex;gap:3px;color:var(--pink)}
+.stars .icf{width:15px;height:15px}
+.hero-visual{position:relative;display:flex;justify-content:center}
+.hero-visual .ghost-word{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) rotate(-8deg);font-family:var(--font-d);font-weight:900;font-size:clamp(90px,14vw,190px);color:transparent;-webkit-text-stroke:2px rgba(11,11,12,.06);white-space:nowrap;pointer-events:none;text-transform:uppercase}
+.float{animation:float 6s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0) rotate(var(--rot,0deg))}50%{transform:translateY(-14px) rotate(var(--rot,0deg))}}
+.seal{position:absolute;width:112px;height:112px;top:-26px;right:2%;z-index:6;color:var(--red)}
+.seal .burst{width:100%;height:100%;fill:currentColor;animation:spin 26s linear infinite;transform-origin:50% 50%;filter:drop-shadow(0 10px 20px rgba(230,33,23,.35))}
+@keyframes spin{to{transform:rotate(360deg)}}
+.seal .ic{position:absolute;inset:0;margin:auto;width:44px;height:44px;color:#fff;stroke-width:3.4}
+.seal-pink{color:var(--pink)}
+.spark{position:absolute;color:var(--red);width:56px;height:56px;top:-46px;right:20%}
+.note{font-family:var(--font-h);font-size:1.55rem;line-height:1.15;color:var(--ink);transform:rotate(-7deg);position:absolute}
+.note u{text-decoration:none;border-bottom:3px solid var(--pink)}
+.arrow-doodle{position:absolute;width:110px;height:86px;color:var(--red)}
+.f-chip{position:absolute;display:inline-flex;align-items:center;gap:8px;background:#fff;border-radius:14px;padding:10px 15px;font-weight:700;font-size:.82rem;box-shadow:0 14px 34px rgba(10,10,11,.16);z-index:5}
+.f-chip .ic{width:17px;height:17px}
+.f-chip.c1{left:-4%;top:24%;--rot:-4deg;color:var(--red)}
+.f-chip.c2{right:-6%;top:52%;--rot:5deg;color:var(--green)}
+.f-chip.c3{left:2%;bottom:8%;--rot:-3deg;color:var(--pink)}
+.f-chip span{color:var(--ink)}
+
+/* ============ PHONE MOCKUP ============ */
+.phone{width:min(320px,84vw);background:#050506;border-radius:48px;padding:10px;position:relative;box-shadow:0 40px 80px rgba(10,10,11,.35),inset 0 0 0 2px #2c2c30;transform:rotate(3deg);z-index:4}
+.phone::before{content:"";position:absolute;right:-3px;top:110px;width:3px;height:64px;background:#2c2c30;border-radius:2px}
+.screen{border-radius:39px;overflow:hidden;background:#0e0e11;position:relative;aspect-ratio:9/19}
+.notch{position:absolute;top:12px;left:50%;transform:translateX(-50%);width:38%;height:24px;background:#000;border-radius:14px;z-index:5}
+.statusbar{display:flex;justify-content:space-between;align-items:center;padding:15px 24px 4px;color:#fff;font-size:12px;font-weight:600}
+.sb-ic{display:flex;gap:5px;align-items:center}
+.sb-ic .ic{width:15px;height:15px;stroke-width:2.2}
+.screen-body{padding:16px 16px 20px;display:flex;flex-direction:column;gap:14px;height:calc(100% - 40px)}
+.yt-logo{display:flex;align-items:center;gap:9px;justify-content:center;color:#fff;font-family:var(--font-d);font-weight:800;font-size:1.15rem;letter-spacing:-.02em;margin-top:6px}
+.yt-logo .box{width:34px;height:24px;border-radius:7px;background:var(--red);display:grid;place-items:center}
+.yt-logo .icf{width:11px;height:11px;color:#fff}
+.m-card{background:#1b1b1f;border:1px solid rgba(255,255,255,.07);border-radius:18px;padding:18px 16px;text-align:center;color:#fff}
+.ok-circle{width:52px;height:52px;border-radius:50%;background:var(--green);display:grid;place-items:center;margin:0 auto 12px;color:#fff;box-shadow:0 0 0 8px rgba(22,196,111,.15)}
+.ok-circle .ic{width:26px;height:26px;stroke-width:3}
+.m-title{font-family:var(--font-d);font-weight:800;font-size:1rem;line-height:1.25}
+.m-sub{font-size:.72rem;color:#9a9aa2;margin-top:6px}
+.m-list{background:#1b1b1f;border:1px solid rgba(255,255,255,.07);border-radius:18px;padding:16px;color:#fff;text-align:left}
+.m-list h5{font-size:.78rem;font-family:var(--font-d);font-weight:800;margin-bottom:12px;color:#e8e8ea}
+.m-list li{display:flex;gap:9px;align-items:center;font-size:.72rem;padding:5px 0;color:#c9c9cf}
+.m-list li .dot{width:17px;height:17px;border-radius:50%;background:var(--green);display:grid;place-items:center;flex:none}
+.m-list li .dot .ic{width:10px;height:10px;stroke-width:3.4;color:#fff}
+.m-btn{margin-top:auto;background:#2a2a2f;color:#fff;text-align:center;border-radius:14px;padding:13px;font-weight:700;font-size:.85rem}
+.m-btn.pink{background:var(--pink);box-shadow:0 10px 24px rgba(254,44,85,.4)}
+.tt-logo{display:grid;place-items:center;margin:14px 0 4px;position:relative}
+.tt-logo svg{width:64px;height:64px}
+.tt-name{text-align:center;color:#fff;font-family:var(--font-d);font-weight:800;font-size:1.3rem;letter-spacing:-.02em}
+.beta-row{display:flex;align-items:center;gap:9px;color:#fff;font-size:.8rem;font-weight:700}
+.beta-ic{width:26px;height:26px;border-radius:50%;background:var(--cyan);color:#062b2a;display:grid;place-items:center}
+.beta-ic .ic{width:14px;height:14px}
+.beta-tag{margin-left:auto;background:var(--cyan);color:#062b2a;font-size:.6rem;font-weight:800;padding:3px 8px;border-radius:6px;letter-spacing:.08em}
+.rev-label{display:flex;align-items:center;gap:6px;font-size:.72rem;color:#9a9aa2}
+.rev-label .ic{width:13px;height:13px}
+.rev-num{font-family:var(--font-d);font-weight:900;font-size:1.9rem;color:#fff;letter-spacing:-.02em;margin:4px 0}
+.rev-up{display:flex;align-items:center;gap:6px;font-size:.72rem;color:var(--green);font-weight:700}
+.rev-up .ic{width:14px;height:14px}
+.rev-up em{font-style:normal;color:#8b8b93;font-weight:500}
+.tabbar{margin-top:auto;display:flex;justify-content:space-between;align-items:center;padding:10px 6px 4px;border-top:1px solid rgba(255,255,255,.08);color:#8b8b93}
+.tabbar .tb{display:flex;flex-direction:column;align-items:center;gap:3px;font-size:.55rem;position:relative}
+.tabbar .tb .ic{width:19px;height:19px}
+.tabbar .tb.on{color:#fff}
+.tb-plus{width:34px;height:24px;border-radius:8px;background:#fff;color:#000;display:grid;place-items:center;box-shadow:-4px 0 0 0 var(--cyan),4px 0 0 0 var(--pink)}
+.tb-plus .ic{width:14px;height:14px;stroke-width:2.6}
+.tb-badge{position:absolute;top:-5px;right:2px;background:var(--pink);color:#fff;font-size:.5rem;font-weight:800;border-radius:8px;padding:1px 4px}
+
+/* ============ MARQUEE ============ */
+.marquee{background:var(--dark);color:#fff;overflow:hidden;padding:17px 0;transform:rotate(-1.3deg) scale(1.03);border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08)}
+.mq-track{display:flex;gap:44px;width:max-content;animation:mq 32s linear infinite;align-items:center}
+.marquee:hover .mq-track{animation-play-state:paused}
+@keyframes mq{to{transform:translateX(-50%)}}
+.mq-item{display:flex;align-items:center;gap:11px;font-family:var(--font-d);font-weight:800;text-transform:uppercase;font-size:.92rem;letter-spacing:.06em;white-space:nowrap}
+.mq-item .icf,.mq-item .ic{width:19px;height:19px}
+.mq-sep{color:var(--pink)}
+.mq-sep.cy{color:var(--cyan)}
+
+/* ============ STATS ============ */
+.stats{padding:76px 0}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.stat{background:#fff;border-radius:var(--radius);padding:30px 26px;text-align:center;border:1px solid rgba(11,11,12,.06);box-shadow:var(--shadow);position:relative;overflow:hidden;transition:.3s}
+.stat:hover{transform:translateY(-6px)}
+.stat::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:var(--acc,var(--red))}
+.stat .ic{width:26px;height:26px;margin:0 auto 12px;color:var(--acc,var(--red));stroke-width:2.4}
+.stat b{display:block;font-family:var(--font-d);font-weight:900;font-size:2.3rem;letter-spacing:-.02em}
+.stat span{color:var(--muted);font-size:.9rem;font-weight:600}
+
+/* ============ SERVICES ============ */
+.sec-head{margin-bottom:52px;max-width:720px}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.s-card{background:#fff;border-radius:var(--radius);padding:30px 28px;position:relative;overflow:hidden;border:1px solid rgba(11,11,12,.06);box-shadow:0 6px 24px rgba(10,10,11,.06);transition:.32s;display:flex;flex-direction:column}
+.s-card::after{content:"";position:absolute;left:0;right:0;bottom:0;height:5px;background:var(--acc);transform:scaleX(0);transform-origin:left;transition:.35s}
+.s-card:hover{transform:translateY(-9px);box-shadow:0 24px 50px rgba(10,10,11,.13)}
+.s-card:hover::after{transform:scaleX(1)}
+.s-icon{width:58px;height:58px;border-radius:17px;display:grid;place-items:center;background:var(--acc-soft);color:var(--acc);margin-bottom:20px}
+.s-icon .ic{width:27px;height:27px;stroke-width:2.2}
+.s-card h3{font-family:var(--font-d);font-weight:800;font-size:1.15rem;margin-bottom:9px}
+.s-card p{color:var(--muted);font-size:.93rem;margin-bottom:16px}
+.s-feat{margin-bottom:22px;display:flex;flex-direction:column;gap:7px}
+.s-feat li{display:flex;gap:9px;align-items:flex-start;font-size:.87rem;font-weight:600;color:#3c3c44}
+.s-feat .ic{width:15px;height:15px;color:var(--acc);stroke-width:3;margin-top:4px}
+.s-foot{margin-top:auto;display:flex;align-items:center;justify-content:space-between;border-top:1px dashed rgba(11,11,12,.15);padding-top:16px}
+.s-price small{display:block;font-size:.68rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);font-weight:700}
+.s-price b{font-family:var(--font-d);font-weight:900;font-size:1.12rem}
+.s-go{width:44px;height:44px;border-radius:50%;background:var(--dark);color:#fff;display:grid;place-items:center;transition:.3s}
+.s-card:hover .s-go{background:var(--acc);transform:rotate(-45deg)}
+.acc-red{--acc:var(--red);--acc-soft:var(--red-soft)}
+.acc-pink{--acc:var(--pink);--acc-soft:var(--pink-soft)}
+.acc-cyan{--acc:#0FBDB2;--acc-soft:var(--cyan-soft)}
+.acc-black{--acc:var(--dark);--acc-soft:var(--black-soft)}
+
+/* ============ DEEP DIVE YT ============ */
+.dd-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:64px;align-items:center}
+.check-list{display:flex;flex-direction:column;margin:30px 0 34px}
+.check-list li{display:flex;gap:18px;padding:17px 0;border-bottom:1px solid rgba(11,11,12,.09)}
+.check-list li:first-child{border-top:1px solid rgba(11,11,12,.09)}
+.cl-ic{width:48px;height:48px;border-radius:50%;background:var(--red);color:#fff;display:grid;place-items:center;flex:none;box-shadow:0 8px 18px rgba(230,33,23,.3)}
+.cl-ic .ic{width:22px;height:22px}
+.check-list h4{font-family:var(--font-d);font-weight:800;font-size:1.02rem;margin-bottom:3px}
+.check-list p{color:var(--muted);font-size:.9rem}
+.price-brush{position:relative;display:inline-block;padding:26px 44px;color:#fff;text-align:center;isolation:isolate;transform:rotate(-2deg)}
+.price-brush::before{content:"";position:absolute;inset:0;background:var(--red);z-index:-1;filter:url(#rough);border-radius:8px}
+.price-brush.pink::before{background:var(--pink)}
+.price-brush small{display:block;font-family:var(--font-d);font-weight:800;font-size:.78rem;letter-spacing:.22em;text-transform:uppercase}
+.price-brush b{display:block;font-family:var(--font-d);font-weight:900;font-size:clamp(2.2rem,4vw,3rem);letter-spacing:-.02em;line-height:1.05}
+.price-brush i{display:block;font-style:normal;font-family:var(--font-d);font-weight:700;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;opacity:.92}
+.dd-visual{position:relative;display:flex;justify-content:center}
+.chip-line{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+.mini-chip{display:inline-flex;align-items:center;gap:7px;background:#fff;border:1px solid rgba(11,11,12,.1);border-radius:999px;padding:8px 14px;font-size:.78rem;font-weight:700;color:#3c3c44}
+.mini-chip .ic{width:15px;height:15px;color:var(--red)}
+
+/* ============ DEEP DIVE TIKTOK (DARK) ============ */
+.dark{background:var(--dark);color:#fff;background-image:radial-gradient(rgba(255,255,255,.05) 1px,transparent 1px);background-size:26px 26px;overflow:hidden}
+.dark .lead{color:#a5a5ad}
+.dark .overline{color:var(--pink)}
+.glow{position:absolute;border-radius:50%;filter:blur(60px);pointer-events:none}
+.glow-pink{width:520px;height:520px;background:radial-gradient(circle,rgba(254,44,85,.32),transparent 62%);top:-120px;right:-140px}
+.glow-cyan{width:460px;height:460px;background:radial-gradient(circle,rgba(37,244,238,.18),transparent 62%);bottom:-160px;left:-140px}
+.dark .check-list li{border-color:rgba(255,255,255,.12)}
+.dark .check-list li:first-child{border-color:rgba(255,255,255,.12)}
+.dark .check-list p{color:#a5a5ad}
+.cl-ic.pink{background:var(--pink);box-shadow:0 8px 18px rgba(254,44,85,.35)}
+.cl-ic.cyan{background:var(--cyan);color:#062b2a;box-shadow:0 8px 18px rgba(37,244,238,.3)}
+.bubble{position:absolute;background:var(--pink);color:#fff;font-family:var(--font-h);font-size:1.5rem;line-height:1.1;padding:14px 22px;border-radius:20px;transform:rotate(7deg);box-shadow:0 16px 34px rgba(254,44,85,.4);z-index:6}
+.bubble::after{content:"";position:absolute;bottom:-12px;left:26px;border:8px solid transparent;border-top-color:var(--pink);border-left-width:16px}
+.dark .mini-chip{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.14);color:#d6d6db}
+.dark .mini-chip .ic{color:var(--cyan)}
+
+/* ============ PROCESS ============ */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;counter-reset:step}
+.step{position:relative;padding-top:8px}
+.step::after{content:"";position:absolute;top:44px;left:calc(50% + 44px);width:calc(100% - 88px);border-top:3px dashed rgba(11,11,12,.18)}
+.step:last-child::after{display:none}
+.step-num{font-family:var(--font-d);font-weight:900;font-size:3.4rem;color:transparent;-webkit-text-stroke:2px var(--red);line-height:1;margin-bottom:14px}
+.step:nth-child(2) .step-num{-webkit-text-stroke-color:var(--pink)}
+.step:nth-child(3) .step-num{-webkit-text-stroke-color:#0FBDB2}
+.step:nth-child(4) .step-num{-webkit-text-stroke-color:var(--dark)}
+.step-ic{width:64px;height:64px;border-radius:20px;background:var(--dark);color:#fff;display:grid;place-items:center;margin:0 auto 18px;position:relative;z-index:2;box-shadow:0 14px 30px rgba(10,10,11,.22)}
+.step-ic .ic{width:28px;height:28px}
+.step{text-align:center}
+.step h3{font-family:var(--font-d);font-weight:800;font-size:1.05rem;margin-bottom:8px}
+.step p{color:var(--muted);font-size:.9rem;max-width:24ch;margin:0 auto}
+
+/* ============ PRICING ============ */
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;align-items:stretch}
+.p-card{background:#fff;border-radius:26px;padding:38px 32px;border:1px solid rgba(11,11,12,.07);box-shadow:var(--shadow);display:flex;flex-direction:column;position:relative;transition:.3s}
+.p-card:hover{transform:translateY(-8px)}
+.p-card.pop{background:var(--dark-2);color:#fff;border:2px solid var(--pink);box-shadow:0 30px 70px rgba(254,44,85,.25);transform:scale(1.045);z-index:2}
+.p-card.pop:hover{transform:scale(1.045) translateY(-8px)}
+.pop-badge{position:absolute;top:-16px;left:50%;transform:translateX(-50%) rotate(-2deg);background:var(--pink);color:#fff;font-family:var(--font-d);font-weight:800;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;padding:8px 20px;border-radius:999px;box-shadow:0 10px 24px rgba(254,44,85,.4);white-space:nowrap}
+.p-name{font-family:var(--font-d);font-weight:800;text-transform:uppercase;letter-spacing:.08em;font-size:.85rem;color:var(--muted)}
+.p-card.pop .p-name{color:var(--cyan)}
+.p-price{font-family:var(--font-d);font-weight:900;font-size:2.9rem;letter-spacing:-.03em;line-height:1.1;margin:10px 0 2px}
+.p-price sub{font-size:.95rem;font-weight:800;vertical-align:baseline;color:var(--muted)}
+.p-card.pop .p-price sub{color:#a5a5ad}
+.p-desc{font-size:.88rem;color:var(--muted);margin-bottom:24px}
+.p-card.pop .p-desc{color:#a5a5ad}
+.p-feats{display:flex;flex-direction:column;gap:11px;margin-bottom:30px}
+.p-feats li{display:flex;gap:10px;align-items:flex-start;font-size:.9rem;font-weight:600}
+.p-feats .ic{width:17px;height:17px;stroke-width:3;color:var(--red);margin-top:3px;flex:none}
+.p-card.pop .p-feats .ic{color:var(--cyan)}
+.p-card .btn{justify-content:center;margin-top:auto}
+.p-note{text-align:center;margin-top:34px;color:var(--muted);font-size:.9rem;display:flex;gap:10px;justify-content:center;align-items:center;flex-wrap:wrap}
+.p-note .mini-chip .ic{color:var(--wa)}
+
+/* ============ TESTIMONIALS ============ */
+.t-slider{position:relative}
+.t-view{overflow:hidden;border-radius:26px}
+.t-track{display:flex;gap:24px;transition:transform .55s cubic-bezier(.65,0,.35,1)}
+.t-card{flex:0 0 calc((100% - 48px)/3);background:#fff;border-radius:var(--radius);padding:30px;border:1px solid rgba(11,11,12,.07);box-shadow:var(--shadow);display:flex;flex-direction:column;gap:16px}
+.t-card .stars .icf{width:17px;height:17px}
+.t-quote{font-size:.95rem;color:#3c3c44;font-weight:500}
+.t-foot{display:flex;gap:13px;align-items:center;margin-top:auto}
+.t-av{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;font-family:var(--font-d);font-weight:800;font-size:.85rem;color:#fff;flex:none}
+.t-foot b{display:block;font-size:.93rem}
+.t-foot span{font-size:.8rem;color:var(--muted)}
+.t-ctrl{display:flex;justify-content:space-between;align-items:center;margin-top:30px}
+.t-dots{display:flex;gap:8px}
+.t-dots button{width:10px;height:10px;border-radius:50%;background:rgba(11,11,12,.18);transition:.3s}
+.t-dots button.on{width:30px;border-radius:6px;background:var(--red)}
+.t-arrows{display:flex;gap:10px}
+.t-arrows button{width:48px;height:48px;border-radius:50%;background:#fff;border:1px solid rgba(11,11,12,.12);display:grid;place-items:center;transition:.25s;color:var(--ink)}
+.t-arrows button:hover{background:var(--dark);color:#fff}
+
+/* ============ FAQ ============ */
+.faq-wrap{max-width:840px;margin:0 auto}
+.faq-item{background:#fff;border-radius:18px;border:1px solid rgba(11,11,12,.08);margin-bottom:14px;overflow:hidden;transition:.3s}
+.faq-item.open{box-shadow:var(--shadow);border-color:rgba(230,33,23,.35)}
+.faq-q{width:100%;display:flex;justify-content:space-between;align-items:center;gap:18px;padding:22px 26px;text-align:left;font-family:var(--font-d);font-weight:800;font-size:1rem}
+.faq-q .ic{width:22px;height:22px;color:var(--red);transition:.35s;flex:none}
+.faq-item.open .faq-q .ic{transform:rotate(45deg);color:var(--pink)}
+.faq-a{display:grid;grid-template-rows:0fr;transition:grid-template-rows .4s ease}
+.faq-item.open .faq-a{grid-template-rows:1fr}
+.faq-a-in{overflow:hidden}
+.faq-a p{padding:0 26px 24px;color:var(--muted);font-size:.95rem;max-width:64ch}
+
+/* ============ CTA ============ */
+.cta-panel{background:var(--dark);border-radius:34px;padding:clamp(40px,6vw,72px);color:#fff;position:relative;overflow:hidden;display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+.cta-panel .h2{color:#fff}
+.cta-panel .lead{color:#a5a5ad}
+.cta-right{display:flex;flex-direction:column;gap:16px;align-items:flex-start}
+.cta-num{font-family:var(--font-d);font-weight:900;font-size:clamp(1.7rem,3.4vw,2.5rem);letter-spacing:-.02em;color:var(--cyan)}
+.cta-note{font-family:var(--font-h);font-size:1.5rem;color:var(--cyan);transform:rotate(-4deg)}
+.cta-note.pk{color:var(--pink);transform:rotate(3deg)}
+
+/* ============ FOOTER ============ */
+footer{background:#08080A;color:#c9c9cf;padding:76px 0 0}
+.f-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:44px;padding-bottom:56px}
+.f-brand .logo{color:#fff;margin-bottom:18px}
+.f-brand p{font-size:.92rem;color:#9a9aa2;max-width:34ch;margin-bottom:22px}
+.f-social{display:flex;gap:10px}
+.f-social a{width:42px;height:42px;border-radius:12px;background:rgba(255,255,255,.07);display:grid;place-items:center;color:#fff;transition:.25s}
+.f-social a:hover{transform:translateY(-4px)}
+.f-social a:hover.yt{background:var(--red)}
+.f-social a:hover.tt{background:var(--pink)}
+.f-social a:hover.ig{background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#bc1888)}
+.f-social a:hover.fb{background:#1877F2}
+.f-social a:hover.xx{background:#fff;color:#000}
+.f-col h4{font-family:var(--font-d);font-weight:800;color:#fff;text-transform:uppercase;font-size:.82rem;letter-spacing:.16em;margin-bottom:20px}
+.f-col ul{display:flex;flex-direction:column;gap:11px}
+.f-col a{font-size:.92rem;color:#9a9aa2;transition:.2s;display:inline-flex;align-items:center;gap:8px}
+.f-col a:hover{color:var(--cyan);transform:translateX(4px)}
+.f-col a .ic{width:15px;height:15px;color:var(--pink)}
+.f-contact li{display:flex;gap:12px;align-items:flex-start;font-size:.92rem;color:#9a9aa2;margin-bottom:14px}
+.f-contact .ic{width:18px;height:18px;color:var(--cyan);margin-top:3px}
+.f-contact b{color:#fff;display:block}
+.f-bottom{border-top:1px solid rgba(255,255,255,.08);padding:24px 0;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;font-size:.85rem;color:#7c7c85}
+.pay-chips{display:flex;gap:8px}
+.pay-chips span{border:1px solid rgba(255,255,255,.16);border-radius:999px;padding:5px 13px;font-size:.72rem;font-weight:700;letter-spacing:.06em}
+
+/* ============ FLOATING ============ */
+.wa-float{position:fixed;right:24px;bottom:24px;width:60px;height:60px;border-radius:50%;background:var(--wa);color:#fff;display:grid;place-items:center;z-index:900;box-shadow:0 14px 34px rgba(29,168,81,.45);transition:.3s}
+.wa-float .icf{width:30px;height:30px}
+.wa-float:hover{transform:scale(1.08) rotate(6deg)}
+.wa-float::before{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid var(--wa);animation:pulse 2s ease-out infinite}
+@keyframes pulse{to{transform:scale(1.55);opacity:0}}
+.to-top{position:fixed;right:96px;bottom:30px;width:46px;height:46px;border-radius:50%;background:var(--dark);color:#fff;display:grid;place-items:center;z-index:900;opacity:0;pointer-events:none;transition:.3s}
+.to-top.show{opacity:1;pointer-events:auto}
+.to-top .ic{transform:rotate(-90deg)}
+.to-top:hover{background:var(--red)}
+
+/* ============ RESPONSIVE ============ */
+@media(max-width:1024px){
+  .services-grid{grid-template-columns:repeat(2,1fr)}
+  .pricing-grid{grid-template-columns:1fr;max-width:520px;margin:0 auto}
+  .p-card.pop{transform:none}
+  .t-card{flex:0 0 calc((100% - 24px)/2)}
+  .steps{grid-template-columns:repeat(2,1fr);gap:40px}
+  .step::after{display:none}
+  .stats-grid{grid-template-columns:repeat(2,1fr)}
+  .f-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:900px){
+  .nav-links{display:none}
+  .burger{display:grid}
+  .nav-cta .btn span{display:none}
+  .hero-grid,.dd-grid,.cta-panel{grid-template-columns:1fr}
+  .hero{padding-top:140px}
+  .dd-visual{order:-1;margin-bottom:20px}
+  .sec-num{display:none}
+}
+@media(max-width:640px){
+  .services-grid{grid-template-columns:1fr}
+  .t-card{flex:0 0 100%}
+  .steps{grid-template-columns:1fr}
+  .stats-grid{grid-template-columns:1fr 1fr;gap:14px}
+  .f-grid{grid-template-columns:1fr}
+  .section{padding:74px 0}
+  .seal{width:88px;height:88px;right:0}
+  .f-chip.c1{left:-2%}
+  .f-chip.c2{right:-2%}
+  .to-top{right:20px;bottom:96px}
+}
+</style>
+</head>
+<body>
+
+<!-- SVG SPRITE (vraies icônes) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <filter id="rough"><feTurbulence type="fractalNoise" baseFrequency="0.022 0.05" numOctaves="2" seed="7" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="7"/></filter>
+  <defs>
+    <!-- marques (fill) -->
+    <symbol id="i-youtube" viewBox="0 0 24 24"><path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.5A3.02 3.02 0 0 0 .5 6.19C0 8.07 0 12 0 12s0 3.93.5 5.81a3.02 3.02 0 0 0 2.12 2.14c1.88.5 9.38.5 9.38.5s7.5 0 9.38-.5a3.02 3.02 0 0 0 2.12-2.14C24 15.93 24 12 24 12s0-3.93-.5-5.81zM9.55 15.57V8.43L15.82 12l-6.27 3.57z"/></symbol>
+    <symbol id="i-tiktok" viewBox="0 0 24 24"><path d="M12.53.02C13.84 0 15.14.01 16.44 0c.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.17-3.02.37-.63.37-1.13.96-1.37 1.65-.27.75-.19 1.61.21 2.31.48.85 1.44 1.4 2.43 1.38 1.12.01 2.19-.66 2.69-1.64.25-.48.34-1.03.34-1.56.03-5.72.01-11.44.02-17.16z"/></symbol>
+    <symbol id="i-instagram" viewBox="0 0 24 24"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.42-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41 1.27-.06 1.65-.07 4.85-.07zM12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.3-1.46.72-2.13 1.38C1.35 2.68.93 3.35.63 4.14.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.3.79.72 1.46 1.38 2.13.67.66 1.34 1.08 2.13 1.38.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56.79-.3 1.46-.72 2.13-1.38.66-.67 1.08-1.34 1.38-2.13.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91-.3-.79-.72-1.46-1.38-2.13C21.32 1.35 20.65.93 19.86.63c-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0zm0 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zM12 16a4 4 0 1 1 4-4 4 4 0 0 1-4 4zm7.85-10.4a1.44 1.44 0 1 1-1.44-1.44 1.44 1.44 0 0 1 1.44 1.44z"/></symbol>
+    <symbol id="i-facebook" viewBox="0 0 24 24"><path d="M24 12.07C24 5.44 18.63.07 12 .07S0 5.44 0 12.07c0 5.99 4.39 10.95 10.13 11.85v-8.38H7.08v-3.47h3.05V9.43c0-3 1.79-4.67 4.53-4.67 1.31 0 2.68.24 2.68.24v2.95h-1.51c-1.49 0-1.96.93-1.96 1.87v2.25h3.33l-.53 3.47h-2.8v8.38C19.61 23.02 24 18.06 24 12.07z"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M18.9 1.15h3.68l-8.04 9.19L24 22.85h-7.41l-5.8-7.58-6.64 7.58H.47l8.6-9.83L0 1.15h7.59l5.24 6.93zm-1.29 19.49h2.04L6.49 3.24H4.3z"/></symbol>
+    <symbol id="i-whatsapp" viewBox="0 0 24 24"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.26-.46-2.39-1.48-.88-.78-1.48-1.76-1.65-2.05-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.91-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.87 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41-.07-.13-.27-.2-.57-.35m-5.42 7.4h-.01a9.87 9.87 0 0 1-5.03-1.37l-.36-.22-3.74.98 1-3.64-.24-.38a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.89 9.88m8.41-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45c6.56 0 11.9-5.33 11.9-11.89 0-3.18-1.24-6.16-3.48-8.41z"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2l2.92 6.26 6.58.7-4.9 4.5 1.35 6.54L12 16.9 6.05 20l1.35-6.54-4.9-4.5 6.58-.7z"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></symbol>
+    <!-- stroke icons -->
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14"/><path d="M5 12h14"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h16"/></symbol>
+    <symbol id="i-shield-check" viewBox="0 0 24 24"><path d="M12 22s8-3.5 8-10V5l-8-3-8 3v7c0 6.5 8 10 8 10z"/><path d="m9 11.5 2.2 2.2 4.3-4.7"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-3.5 8-10V5l-8-3-8 3v7c0 6.5 8 10 8 10z"/></symbol>
+    <symbol id="i-zap" viewBox="0 0 24 24"><path d="M13 2 3 14h8l-1 8 10-12h-8l1-8z"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M5 21a7 7 0 0 1 14 0"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21.2l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.8z"/></symbol>
+    <symbol id="i-video" viewBox="0 0 24 24"><path d="m22 8-6 4 6 4V8z"/><rect x="2" y="6" width="14" height="12" rx="2"/></symbol>
+    <symbol id="i-broadcast" viewBox="0 0 24 24"><circle cx="12" cy="12" r="2"/><path d="M16.24 7.76a6 6 0 0 1 0 8.49"/><path d="M7.76 16.24a6 6 0 0 1 0-8.49"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M4.93 19.07a10 10 0 0 1 0-14.14"/></symbol>
+    <symbol id="i-list" viewBox="0 0 24 24"><path d="M8 6h13"/><path d="M8 12h13"/><path d="M8 18h13"/><path d="M3 6h.01"/><path d="M3 12h.01"/><path d="M3 18h.01"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></symbol>
+    <symbol id="i-trend" viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></symbol>
+    <symbol id="i-smartphone" viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M12 18h.01"/></symbol>
+    <symbol id="i-message" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></symbol>
+    <symbol id="i-send" viewBox="0 0 24 24"><path d="m22 2-11 11"/><path d="M22 2 15 22l-4-9-9-4z"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 14"/></symbol>
+    <symbol id="i-dollar" viewBox="0 0 24 24"><path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></symbol>
+    <symbol id="i-music" viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></symbol>
+    <symbol id="i-camera" viewBox="0 0 24 24"><path d="M4 7h3l2-3h6l2 3h3a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="4"/></symbol>
+    <symbol id="i-thumb" viewBox="0 0 24 24"><path d="M7 10v12"/><path d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2a3.13 3.13 0 0 1 3 3.88z"/></symbol>
+    <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></symbol>
+    <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.5 13 17 22l-5-3-5 3 1.5-9"/></symbol>
+    <symbol id="i-crown" viewBox="0 0 24 24"><path d="M3 8l4 4 5-6 5 6 4-4v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></symbol>
+    <symbol id="i-sparkles" viewBox="0 0 24 24"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"/><path d="M19 15l.7 1.8 1.8.7-1.8.7-.7 1.8-.7-1.8-1.8-.7 1.8-.7z"/></symbol>
+    <symbol id="i-headset" viewBox="0 0 24 24"><path d="M4 13a8 8 0 0 1 16 0"/><rect x="2" y="13" width="4" height="7" rx="2"/><rect x="18" y="13" width="4" height="7" rx="2"/><path d="M20 20a2 2 0 0 1-2 2h-4"/></symbol>
+    <symbol id="i-wallet" viewBox="0 0 24 24"><path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"/><path d="M3 5v14a2 2 0 0 0 2 2h16v-5"/><path d="M18 12a2 2 0 0 0 0 4h4v-4z"/></symbol>
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="m3 10 9-7 9 7v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></symbol>
+    <symbol id="i-inbox" viewBox="0 0 24 24"><polyline points="22 12 16 12 14 15 10 15 8 12 2 12"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/></symbol>
+    <symbol id="i-wifi" viewBox="0 0 24 24"><path d="M2 8.5a15 15 0 0 1 20 0"/><path d="M5 12a10 10 0 0 1 14 0"/><path d="M8.5 15.5a5 5 0 0 1 7 0"/><path d="M12 19h.01"/></symbol>
+    <symbol id="i-battery" viewBox="0 0 24 24"><rect x="2" y="7" width="17" height="10" rx="2"/><path d="M22 11v2"/><path d="M6 11v2"/><path d="M10 11v2"/></symbol>
+    <symbol id="i-signal" viewBox="0 0 24 24"><path d="M4 20v-3"/><path d="M9 20v-7"/><path d="M14 20V9"/><path d="M19 20V4"/></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5"/><path d="M12 8h.01"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a15 15 0 0 1 0 18 15 15 0 0 1 0-18z"/></symbol>
+  </defs>
+</svg>
+
+<div id="progress"></div>
+
+<!-- ============ HEADER ============ -->
+<header id="header">
+  <div class="container nav">
+    <a href="#" class="logo" aria-label="VIRALAB accueil">
+      <span class="logo-mark"><svg class="icf" style="width:20px;height:20px"><use href="#i-play"/></svg></span>
+      VIRAL<em>AB</em>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#services">Services</a>
+      <a href="#youtube">YouTube</a>
+      <a href="#tiktok">TikTok</a>
+      <a href="#tarifs">Tarifs</a>
+      <a href="#avis">Avis</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-wa btn-sm" href="https://wa.me/22890804914?text=Bonjour%20VIRALAB%2C%20je%20souhaite%20un%20service." target="_blank" rel="noopener">
+        <svg class="icf"><use href="#i-whatsapp"/></svg><span>WhatsApp</span>
+      </a>
+      <button class="burger" id="burger" aria-label="Ouvrir le menu"><svg class="ic"><use href="#i-menu"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mm-close" id="mmClose" aria-label="Fermer"><svg class="ic"><use href="#i-close"/></svg></button>
+  <a href="#services">Services</a>
+  <a href="#youtube">YouTube <span>+</span></a>
+  <a href="#tiktok">TikTok</a>
+  <a href="#tarifs">Tarifs</a>
+  <a href="#avis">Avis</a>
+  <a href="#faq">FAQ</a>
+  <p class="mm-foot">Contact direct : <strong>+228 90804914</strong><br>Lomé, Togo — Lun au Sam, 8h à 20h</p>
+</div>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <span class="chip" data-reveal><svg class="icf"><use href="#i-star"/></svg> N°1 des services sociaux au Togo</span>
+      <h1 class="display" data-reveal style="--d:.08s">
+        Débloquez tout<br>
+        <span class="band">le potentiel</span><br>
+        de vos réseaux
+      </h1>
+      <p class="hero-sub" data-reveal style="--d:.16s">
+        Validation de numéro <strong>YouTube</strong>, comptes <strong>TikTok monétisables</strong>,
+        croissance Instagram & Facebook. Un service <strong>rapide, sécurisé et humain</strong>, basé à Lomé.
+      </p>
+      <div class="hero-ctas" data-reveal style="--d:.24s">
+        <a class="btn btn-red" href="https://wa.me/22890804914?text=Bonjour%20VIRALAB%2C%20je%20veux%20commander." target="_blank" rel="noopener">
+          <svg class="icf"><use href="#i-whatsapp"/></svg> Commander sur WhatsApp
+        </a>
+        <a class="btn btn-ghost" href="#services">Voir les services <svg class="ic"><use href="#i-arrow-right"/></svg></a>
+      </div>
+      <div class="trust" data-reveal style="--d:.32s">
+        <div class="avatars">
+          <span style="background:var(--red)">AK</span>
+          <span style="background:var(--pink)">KM</span>
+          <span style="background:#0FBDB2">FB</span>
+          <span style="background:var(--dark)">YD</span>
+        </div>
+        <div class="trust-txt">
+          <strong>500+ créateurs nous font confiance</strong>
+          <span class="stars">
+            <svg class="icf"><use href="#i-star"/></svg><svg class="icf"><use href="#i-star"/></svg><svg class="icf"><use href="#i-star"/></svg><svg class="icf"><use href="#i-star"/></svg><svg class="icf"><use href="#i-star"/></svg>
+          </span> 4.9/5 sur plus de 320 avis
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual" data-reveal style="--d:.2s">
+      <span class="ghost-word">Boost</span>
+      <svg class="spark" viewBox="0 0 60 60" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"><path d="M30 6v12"/><path d="M50 14l-8 9"/><path d="M10 14l8 9"/></svg>
+      <div class="seal" aria-hidden="true">
+        <svg class="burst" viewBox="0 0 100 100"><polygon points="100,50 84.8,59.3 93.3,75 75.5,75.5 75,93.3 59.3,84.8 50,100 40.7,84.8 25,93.3 24.5,75.5 6.7,75 15.2,59.3 0,50 15.2,40.7 6.7,25 24.5,24.5 25,6.7 40.7,15.2 50,0 59.3,15.2 75,6.7 75.5,24.5 93.3,25 84.8,40.7"/></svg>
+        <svg class="ic"><use href="#i-check"/></svg>
+      </div>
+      <div class="float" style="--rot:3deg">
+        <div class="phone">
+          <div class="screen">
+            <div class="notch"></div>
+            <div class="statusbar"><span>9:41</span><span class="sb-ic"><svg class="ic"><use href="#i-signal"/></svg><svg class="ic"><use href="#i-wifi"/></svg><svg class="ic"><use href="#i-battery"/></svg></span></div>
+            <div class="screen-body">
+              <div class="yt-logo"><span class="box"><svg class="icf"><use href="#i-play"/></svg></span> YouTube</div>
+              <div class="m-card">
+                <div class="ok-circle"><svg class="ic"><use href="#i-check"/></svg></div>
+                <div class="m-title">Numéro de téléphone validé</div>
+                <p class="m-sub">Vous avez maintenant accès à des fonctionnalités supplémentaires.</p>
+              </div>
+              <div class="m-list">
+                <h5>Fonctionnalités débloquées</h5>
+                <ul>
+                  <li><span class="dot"><svg class="ic"><use href="#i-check"/></svg></span> Vidéos de plus de 15 minutes</li>
+                  <li><span class="dot"><svg class="ic"><use href="#i-check"/></svg></span> Streaming en direct</li>
+                  <li><span class="dot"><svg class="ic"><use href="#i-check"/></svg></span> Playlists personnalisées</li>
+                  <li><span class="dot"><svg class="ic"><use href="#i-check"/></svg></span> Monétisation (Programme Partenaire)</li>
+                </ul>
+              </div>
+              <div class="m-btn">Tout est prêt !</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="f-chip c1 float" style="--rot:-4deg"><svg class="ic"><use href="#i-video"/></svg><span>Vidéos +15 min</span></div>
+      <div class="f-chip c2 float" style="--rot:5deg;animation-delay:1.2s"><svg class="ic"><use href="#i-broadcast"/></svg><span>Live activé</span></div>
+      <div class="f-chip c3 float" style="--rot:-3deg;animation-delay:.6s"><svg class="ic"><use href="#i-dollar"/></svg><span>Monétisation OK</span></div>
+      <div class="note" style="right:-2%;bottom:-6%">Simple, rapide,<br><u>sécurisé</u>
+        <svg class="arrow-doodle" viewBox="0 0 120 90" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" style="position:static;width:88px;margin-top:4px"><path d="M104 10 C 70 6, 34 22, 20 62"/><path d="M10 52 20 66 34 58" fill="none"/></svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MARQUEE ============ -->
+<div class="marquee" aria-hidden="true">
+  <div class="mq-track">
+    <span class="mq-item"><svg class="icf"><use href="#i-youtube"/></svg> Validation YouTube</span><svg class="icf mq-sep"><use href="#i-star"/></svg>
+    <span class="mq-item"><svg class="icf"><use href="#i-tiktok"/></svg> TikTok monétisable</span><svg class="icf mq-sep cy"><use href="#i-star"/></svg>
+    <span class="mq-item"><svg class="icf"><use href="#i-instagram"/></svg> Croissance Instagram</span><svg class="icf mq-sep"><use href="#i-star"/></svg>
+    <span class="mq-item"><svg class="icf"><use href="#i-facebook"/></svg> Pages Facebook</span><svg class="icf mq-sep cy"><use href="#i-star"/></svg>
+    <span class="mq-item"><svg class="ic"><use href="#i-heart"/></svg> Vues, likes & abonnés</span><svg class="icf mq-sep"><use href="#i-star"/></svg>
+    <span class="mq-item"><svg class="ic"><use href="#i-crown"/></svg> Community management</span><svg class="icf mq-sep cy"><use href="#i-star"/></svg>
+    <span class="mq-item"><svg class="icf"><use href="#i-youtube"/></svg> Validation YouTube</span><svg class="icf mq-sep"><use href="#i-star"/></svg>
+    <span class="mq-item"><svg class="icf"><use href="#i-tiktok"/></svg> TikTok monétisable</span><svg class="icf mq-sep cy"><use href="#i-star"/></svg>
+    <span class="mq-item"><svg class="icf"><use href="#i-instagram"/></svg> Croissance Instagram</span><svg class="icf mq-sep"><use href="#i-star"/></svg>
+    <span class="mq-item"><svg class="icf"><use href="#i-facebook"/></svg> Pages Facebook</span><svg class="icf mq-sep cy"><use href="#i-star"/></svg>
+    <span class="mq-item"><svg class="ic"><use href="#i-heart"/></svg> Vues, likes & abonnés</span><svg class="icf mq-sep"><use href="#i-star"/></svg>
+    <span class="mq-item"><svg class="ic"><use href="#i-crown"/></svg> Community management</span><svg class="icf mq-sep cy"><use href="#i-star"/></svg>
+  </div>
+</div>
+
+<!-- ============ STATS ============ -->
+<section class="stats">
+  <div class="container stats-grid">
+    <div class="stat acc-red" data-reveal style="--acc:var(--red)"><svg class="ic"><use href="#i-users"/></svg><b data-count="500" data-suffix="+">0</b><span>Clients satisfaits</span></div>
+    <div class="stat" data-reveal style="--acc:var(--pink);--d:.1s"><svg class="ic"><use href="#i-zap"/></svg><b data-count="1200" data-suffix="+">0</b><span>Commandes livrées</span></div>
+    <div class="stat" data-reveal style="--acc:#0FBDB2;--d:.2s"><svg class="ic"><use href="#i-clock"/></svg><b data-count="24" data-suffix="h">0</b><span>Délai moyen</span></div>
+    <div class="stat" data-reveal style="--acc:var(--dark);--d:.3s"><svg class="ic"><use href="#i-thumb"/></svg><b data-count="98" data-suffix="%">0</b><span>Avis positifs</span></div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="section" id="services">
+  <span class="sec-num">01</span>
+  <div class="container">
+    <div class="sec-head" data-reveal>
+      <span class="overline">Nos services</span>
+      <h2 class="h2">Tout pour faire<br>décoller votre présence</h2>
+      <p class="lead">Des services clés en main, pensés pour les créateurs, entrepreneurs et artistes africains. Choisissez, commandez sur WhatsApp, recevez en 24h.</p>
+    </div>
+    <div class="services-grid">
+      <article class="s-card acc-red" data-reveal>
+        <div class="s-icon"><svg class="ic"><use href="#i-smartphone"/></svg></div>
+        <h3>Validation numéro YouTube</h3>
+        <p>Débloquez toutes les fonctions avancées de votre chaîne en validant votre numéro officiellement.</p>
+        <ul class="s-feat">
+          <li><svg class="ic"><use href="#i-check"/></svg> Vidéos de plus de 15 minutes</li>
+          <li><svg class="ic"><use href="#i-check"/></svg> Streaming en direct</li>
+          <li><svg class="ic"><use href="#i-check"/></svg> Accès à la monétisation</li>
+        </ul>
+        <div class="s-foot">
+          <div class="s-price"><small>À partir de</small><b>5 000 F CFA</b></div>
+          <a class="s-go" href="https://wa.me/22890804914?text=Bonjour%2C%20je%20veux%20valider%20mon%20num%C3%A9ro%20YouTube." target="_blank" rel="noopener" aria-label="Commander"><svg class="ic"><use href="#i-arrow-right"/></svg></a>
+        </div>
+      </article>
+      <article class="s-card acc-pink" data-reveal style="--d:.08s">
+        <div class="s-icon"><svg class="ic"><use href="#i-music"/></svg></div>
+        <h3>Compte TikTok monétisable</h3>
+        <p>Un compte neuf, sécurisé et éligible au programme de monétisation Beta, prêt à publier.</p>
+        <ul class="s-feat">
+          <li><svg class="ic"><use href="#i-check"/></svg> Compte 100% neuf & sécurisé</li>
+          <li><svg class="ic"><use href="#i-check"/></svg> Éligible programme Beta</li>
+          <li><svg class="ic"><use href="#i-check"/></svg> Accompagnement premiers contenus</li>
+        </ul>
+        <div class="s-foot">
+          <div class="s-price"><small>À partir de</small><b>5 000 F CFA</b></div>
+          <a class="s-go" href="https://wa.me/22890804914?text=Bonjour%2C%20je%20veux%20un%20compte%20TikTok%20mon%C3%A9tisable." target="_blank" rel="noopener" aria-label="Commander"><svg class="ic"><use href="#i-arrow-right"/></svg></a>
+        </div>
+      </article>
+      <article class="s-card acc-pink" data-reveal style="--d:.16s">
+        <div class="s-icon"><svg class="ic"><use href="#i-camera"/></svg></div>
+        <h3>Croissance Instagram</h3>
+        <p>Abonnés ciblés, engagement réel et profil optimisé pour transformer votre vitrine en machine à clients.</p>
+        <ul class="s-feat">
+          <li><svg class="ic"><use href="#i-check"/></svg> Abonnés & engagement ciblés</li>
+          <li><svg class="ic"><use href="#i-check"/></svg> Optimisation bio & highlights</li>
+          <li><svg class="ic"><use href="#i-check"/></svg> Stratégie de publication</li>
+        </ul>
+        <div class="s-foot">
+          <div class="s-price"><small>À partir de</small><b>10 000 F CFA</b></div>
+          <a class="s-go" href="https://wa.me/22890804914?text=Bonjour%2C%20je%20veux%20booster%20mon%20Instagram." target="_blank" rel="noopener" aria-label="Commander"><svg class="ic"><use href="#i-arrow-right"/></svg></a>
+        </div>
+      </article>
+      <article class="s-card acc-black" data-reveal>
+        <div class="s-icon"><svg class="ic"><use href="#i-thumb"/></svg></div>
+        <h3>Pages & pubs Facebook</h3>
+        <p>Création de pages professionnelles, gestion de campagnes publicitaires et suivi des performances.</p>
+        <ul class="s-feat">
+          <li><svg class="ic"><use href="#i-check"/></svg> Page professionnelle complète</li>
+          <li><svg class="ic"><use href="#i-check"/></svg> Campagnes Meta Ads</li>
+          <li><svg class="ic"><use href="#i-check"/></svg> Rapport de performances</li>
+        </ul>
+        <div class="s-foot">
+          <div class="s-price"><small>À partir de</small><b>15 000 F CFA</b></div>
+          <a class="s-go" href="https://wa.me/22890804914?text=Bonjour%2C%20je%20veux%20une%20page%20Facebook%20pro." target="_blank" rel="noopener" aria-label="Commander"><svg class="ic"><use href="#i-arrow-right"/></svg></a>
+        </div>
+      </article>
+      <article class="s-card acc-cyan" data-reveal style="--d:.08s">
+        <div class="s-icon"><svg class="ic"><use href="#i-heart"/></svg></div>
+        <h3>Vues, likes & abonnés</h3>
+        <p>Un coup de pouce rapide et progressif sur vos contenus pour déclencher l'algorithme et la preuve sociale.</p>
+        <ul class="s-feat">
+          <li><svg class="ic"><use href="#i-check"/></svg> Livraison progressive naturelle</li>
+          <li><svg class="ic"><use href="#i-check"/></svg> YouTube, TikTok, Instagram, Facebook</li>
+          <li><svg class="ic"><use href="#i-check"/></svg> Garanties de remplacement</li>
+        </ul>
+        <div class="s-foot">
+          <div class="s-price"><small>À partir de</small><b>2 000 F CFA</b></div>
+          <a class="s-go" href="https://wa.me/22890804914?text=Bonjour%2C%20je%20veux%20des%20vues%20et%20likes." target="_blank" rel="noopener" aria-label="Commander"><svg class="ic"><use href="#i-arrow-right"/></svg></a>
+        </div>
+      </article>
+      <article class="s-card acc-red" data-reveal style="--d:.16s">
+        <div class="s-icon"><svg class="ic"><use href="#i-crown"/></svg></div>
+        <h3>Community management</h3>
+        <p>On pilote vos réseaux au quotidien : contenus, publication, modération et croissance, pendant que vous créez.</p>
+        <ul class="s-feat">
+          <li><svg class="ic"><use href="#i-check"/></svg> Calendrier éditorial mensuel</li>
+          <li><svg class="ic"><use href="#i-check"/></svg> Création & publication des visuels</li>
+          <li><svg class="ic"><use href="#i-check"/></svg> Modération & messages clients</li>
+        </ul>
+        <div class="s-foot">
+          <div class="s-price"><small>Formule</small><b>Sur devis</b></div>
+          <a class="s-go" href="https://wa.me/22890804914?text=Bonjour%2C%20je%20veux%20un%20community%20manager." target="_blank" rel="noopener" aria-label="Demander un devis"><svg class="ic"><use href="#i-arrow-right"/></svg></a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ YOUTUBE DEEP DIVE ============ -->
+<section class="section" id="youtube" style="background:#fff">
+  <span class="sec-num">02</span>
+  <div class="container dd-grid">
+    <div data-reveal>
+      <span class="overline">Service YouTube</span>
+      <h2 class="h2">Validation du numéro<br>pour tout débloquer</h2>
+      <p class="lead">Ajoutez votre numéro de téléphone à votre chaîne et accédez à toutes les fonctionnalités avancées. On s'occupe de tout, proprement.</p>
+      <ul class="check-list">
+        <li><span class="cl-ic"><svg class="ic"><use href="#i-video"/></svg></span><div><h4>Vidéos plus longues</h4><p>Débloquez la publication de vidéos de plus de 15 minutes.</p></div></li>
+        <li><span class="cl-ic"><svg class="ic"><use href="#i-broadcast"/></svg></span><div><h4>Streaming en direct</h4><p>Faites des lives et interagissez avec votre audience.</p></div></li>
+        <li><span class="cl-ic"><svg class="ic"><use href="#i-list"/></svg></span><div><h4>Création de playlists</h4><p>Organisez vos vidéos facilement pour fidéliser vos viewers.</p></div></li>
+        <li><span class="cl-ic"><svg class="ic"><use href="#i-shield-check"/></svg></span><div><h4>Sécurité renforcée</h4><p>Protégez votre compte avec une meilleure vérification.</p></div></li>
+        <li><span class="cl-ic"><svg class="ic"><use href="#i-dollar"/></svg></span><div><h4>Accès à la monétisation</h4><p>Étape obligatoire pour rejoindre le Programme Partenaire YouTube.</p></div></li>
+      </ul>
+      <div class="price-brush">
+        <small>Tarif unique</small><b>5 000 F CFA</b><i>Validation de votre numéro</i>
+      </div>
+      <div class="chip-line">
+        <span class="mini-chip"><svg class="ic"><use href="#i-clock"/></svg> Livraison 24h</span>
+        <span class="mini-chip"><svg class="ic"><use href="#i-lock"/></svg> Sans mot de passe</span>
+        <span class="mini-chip"><svg class="ic"><use href="#i-shield"/></svg> Garantie 7 jours</span>
+      </div>
+    </div>
+    <div class="dd-visual" data-reveal style="--d:.15s">
+      <div class="seal seal-pink" style="top:-20px;right:6%"><svg class="burst" viewBox="0 0 100 100"><polygon points="100,50 84.8,59.3 93.3,75 75.5,75.5 75,93.3 59.3,84.8 50,100 40.7,84.8 25,93.3 24.5,75.5 6.7,75 15.2,59.3 0,50 15.2,40.7 6.7,25 24.5,24.5 25,6.7 40.7,15.2 50,0 59.3,15.2 75,6.7 75.5,24.5 93.3,25 84.8,40.7"/></svg><svg class="ic"><use href="#i-check"/></svg></div>
+      <div class="float" style="--rot:-3deg">
+        <div class="phone" style="transform:rotate(-4deg)">
+          <div class="screen">
+            <div class="notch"></div>
+            <div class="statusbar"><span>9:41</span><span class="sb-ic"><svg class="ic"><use href="#i-signal"/></svg><svg class="ic"><use href="#i-wifi"/></svg><svg class="ic"><use href="#i-battery"/></svg></span></div>
+            <div class="screen-body">
+              <div class="yt-logo"><span class="box"><svg class="icf"><use href="#i-play"/></svg></span> YouTube Studio</div>
+              <div class="m-card">
+                <div class="ok-circle"><svg class="ic"><use href="#i-check"/></svg></div>
+                <div class="m-title">Chaîne vérifiée</div>
+                <p class="m-sub">Toutes les fonctionnalités intermédiaires sont actives.</p>
+              </div>
+              <div class="m-list">
+                <h5>Statut de la chaîne</h5>
+                <ul>
+                  <li><span class="dot"><svg class="ic"><use href="#i-check"/></svg></span> Limite de téléversement étendue</li>
+                  <li><span class="dot"><svg class="ic"><use href="#i-check"/></svg></span> Lives autorisés</li>
+                  <li><span class="dot"><svg class="ic"><use href="#i-check"/></svg></span> Miniatures personnalisées</li>
+                  <li><span class="dot"><svg class="ic"><use href="#i-check"/></svg></span> Monétisation activable</li>
+                </ul>
+              </div>
+              <div class="m-btn">Continuer vers la monétisation</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TIKTOK DEEP DIVE ============ -->
+<section class="section dark" id="tiktok">
+  <div class="glow glow-pink"></div>
+  <div class="glow glow-cyan"></div>
+  <span class="sec-num">03</span>
+  <div class="container dd-grid">
+    <div class="dd-visual" data-reveal>
+      <div class="bubble" style="top:-14px;right:4%">Revenus<br>réels !</div>
+      <div class="float" style="--rot:4deg">
+        <div class="phone" style="transform:rotate(4deg)">
+          <div class="screen">
+            <div class="notch"></div>
+            <div class="statusbar"><span>9:41</span><span class="sb-ic"><svg class="ic"><use href="#i-signal"/></svg><svg class="ic"><use href="#i-wifi"/></svg><svg class="ic"><use href="#i-battery"/></svg></span></div>
+            <div class="screen-body">
+              <div class="tt-logo">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <use href="#i-tiktok" x="-0.9" fill="#25F4EE"/>
+                  <use href="#i-tiktok" x="0.9" fill="#FE2C55"/>
+                  <use href="#i-tiktok" fill="#ffffff"/>
+                </svg>
+              </div>
+              <div class="tt-name">TikTok</div>
+              <div class="m-card" style="text-align:left">
+                <div class="beta-row"><span class="beta-ic"><svg class="ic"><use href="#i-zap"/></svg></span> Programme Beta <span class="beta-tag">BETA</span></div>
+                <p class="m-sub" style="text-align:left;margin-top:8px">Vos vidéos sont éligibles à la monétisation !</p>
+              </div>
+              <div class="m-card" style="text-align:left">
+                <div class="rev-label">Revenus estimés <svg class="ic"><use href="#i-info"/></svg></div>
+                <div class="rev-num">$ 1,248.32</div>
+                <div class="rev-up"><svg class="ic"><use href="#i-trend"/></svg> +42% <em>(7 derniers jours)</em></div>
+              </div>
+              <div class="m-btn pink">Voir les détails</div>
+              <div class="tabbar">
+                <span class="tb on"><svg class="ic"><use href="#i-home"/></svg>Accueil</span>
+                <span class="tb"><svg class="ic"><use href="#i-users"/></svg>Amis</span>
+                <span class="tb"><span class="tb-plus"><svg class="ic"><use href="#i-plus"/></svg></span></span>
+                <span class="tb"><svg class="ic"><use href="#i-inbox"/></svg><span class="tb-badge">12</span>Boîte</span>
+                <span class="tb"><svg class="ic"><use href="#i-user"/></svg>Profil</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div data-reveal style="--d:.12s">
+      <span class="overline">Service TikTok</span>
+      <h2 class="h2">Créez, publiez,<br>gagnez de l'argent</h2>
+      <p class="lead">Après la création de vos contenus, gagnez de l'argent avec le partenariat TikTok. On vous livre un compte prêt à produire des revenus.</p>
+      <ul class="check-list">
+        <li><span class="cl-ic pink"><svg class="ic"><use href="#i-user"/></svg></span><div><h4>Création de votre compte TikTok</h4><p>100% neuf, sécurisé et configuré par nos soins.</p></div></li>
+        <li><span class="cl-ic pink"><svg class="ic"><use href="#i-video"/></svg></span><div><h4>Après création de vos contenus</h4><p>Vidéos, lives, etc. : tout est prêt pour publier.</p></div></li>
+        <li><span class="cl-ic cyan"><svg class="ic"><use href="#i-dollar"/></svg></span><div><h4>Partenariat TikTok</h4><p>Monétisation de vos vidéos via le programme Beta.</p></div></li>
+        <li><span class="cl-ic cyan"><svg class="ic"><use href="#i-shield-check"/></svg></span><div><h4>Compte 100% valide et fonctionnel</h4><p>Avec le programme Beta activé et vérifié.</p></div></li>
+      </ul>
+      <div class="price-brush pink">
+        <small>Prix unique</small><b>5 000 F</b><i>Compte monétisable prêt</i>
+      </div>
+      <div class="chip-line">
+        <span class="mini-chip"><svg class="ic"><use href="#i-zap"/></svg> Activation 24-48h</span>
+        <span class="mini-chip"><svg class="ic"><use href="#i-headset"/></svg> Suivi personnalisé</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROCESS ============ -->
+<section class="section" id="process">
+  <span class="sec-num">04</span>
+  <div class="container">
+    <div class="sec-head" style="text-align:center;margin-left:auto;margin-right:auto" data-reveal>
+      <span class="overline" style="justify-content:center">Comment ça marche</span>
+      <h2 class="h2">4 étapes, zéro stress</h2>
+    </div>
+    <div class="steps">
+      <div class="step" data-reveal><div class="step-num">01</div><div class="step-ic"><svg class="ic"><use href="#i-message"/></svg></div><h3>Contact WhatsApp</h3><p>Dites-nous ce que vous voulez débloquer ou booster.</p></div>
+      <div class="step" data-reveal style="--d:.1s"><div class="step-num">02</div><div class="step-ic"><svg class="ic"><use href="#i-wallet"/></svg></div><h3>Paiement sécurisé</h3><p>Flooz, T-Money ou espèces à Lomé. Reçu immédiat.</p></div>
+      <div class="step" data-reveal style="--d:.2s"><div class="step-num">03</div><div class="step-ic"><svg class="ic"><use href="#i-zap"/></svg></div><h3>Exécution express</h3><p>Livraison en 24h en moyenne, avec preuves à l'appui.</p></div>
+      <div class="step" data-reveal style="--d:.3s"><div class="step-num">04</div><div class="step-ic"><svg class="ic"><use href="#i-headset"/></svg></div><h3>Support continu</h3><p>Assistance 7j/7 après livraison, sans frais cachés.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRICING ============ -->
+<section class="section" id="tarifs" style="background:#fff">
+  <span class="sec-num">05</span>
+  <div class="container">
+    <div class="sec-head" data-reveal>
+      <span class="overline">Tarifs</span>
+      <h2 class="h2">Des packs clairs,<br>sans surprise</h2>
+      <p class="lead">Prix uniques et transparents, pensés pour tous les budgets. Paiement Mobile Money accepté.</p>
+    </div>
+    <div class="pricing-grid">
+      <div class="p-card" data-reveal>
+        <span class="p-name">Starter</span>
+        <div class="p-price">5 000<sub> F CFA</sub></div>
+        <p class="p-desc">L'essentiel pour débloquer une plateforme.</p>
+        <ul class="p-feats">
+          <li><svg class="ic"><use href="#i-check"/></svg> 1 service au choix : validation YouTube ou compte TikTok</li>
+          <li><svg class="ic"><use href="#i-check"/></svg> Livraison sous 24 à 48h</li>
+          <li><svg class="ic"><use href="#i-check"/></svg> Garantie 7 jours</li>
+          <li><svg class="ic"><use href="#i-check"/></svg> Support WhatsApp</li>
+        </ul>
+        <a class="btn btn-dark" href="https://wa.me/22890804914?text=Bonjour%2C%20je%20prends%20le%20pack%20Starter." target="_blank" rel="noopener">Choisir Starter</a>
+      </div>
+      <div class="p-card pop" data-reveal style="--d:.1s">
+        <span class="pop-badge">Le plus populaire</span>
+        <span class="p-name">Growth</span>
+        <div class="p-price">12 000<sub> F CFA</sub></div>
+        <p class="p-desc">Le combo gagnant pour monétiser vite.</p>
+        <ul class="p-feats">
+          <li><svg class="ic"><use href="#i-check"/></svg> Validation YouTube + compte TikTok monétisable</li>
+          <li><svg class="ic"><use href="#i-check"/></svg> Optimisation des profils incluse</li>
+          <li><svg class="ic"><use href="#i-check"/></svg> Guide de démarrage monétisation</li>
+          <li><svg class="ic"><use href="#i-check"/></svg> Livraison prioritaire</li>
+          <li><svg class="ic"><use href="#i-check"/></svg> Support 30 jours</li>
+        </ul>
+        <a class="btn btn-pink" href="https://wa.me/22890804914?text=Bonjour%2C%20je%20prends%20le%20pack%20Growth." target="_blank" rel="noopener">Choisir Growth</a>
+      </div>
+      <div class="p-card" data-reveal style="--d:.2s">
+        <span class="p-name">Business</span>
+        <div class="p-price">25 000<sub> F CFA</sub></div>
+        <p class="p-desc">Pour les marques qui veulent déléguer totalement.</p>
+        <ul class="p-feats">
+          <li><svg class="ic"><use href="#i-check"/></svg> Tout le pack Growth</li>
+          <li><svg class="ic"><use href="#i-check"/></svg> Community management 1 mois</li>
+          <li><svg class="ic"><use href="#i-check"/></svg> Calendrier de 10 contenus</li>
+          <li><svg class="ic"><use href="#i-check"/></svg> Campagne publicitaire Meta</li>
+          <li><svg class="ic"><use href="#i-check"/></svg> Conseiller dédié</li>
+        </ul>
+        <a class="btn btn-dark" href="https://wa.me/22890804914?text=Bonjour%2C%20je%20prends%20le%20pack%20Business." target="_blank" rel="noopener">Choisir Business</a>
+      </div>
+    </div>
+    <p class="p-note" data-reveal>
+      <span class="mini-chip"><svg class="ic"><use href="#i-wallet"/></svg> Flooz</span>
+      <span class="mini-chip"><svg class="ic"><use href="#i-wallet"/></svg> T-Money</span>
+      <span class="mini-chip"><svg class="ic"><use href="#i-pin"/></svg> Espèces à Lomé</span>
+      <span style="font-weight:600">— paiement au choix, reçu systématique.</span>
+    </p>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section class="section" id="avis">
+  <span class="sec-num">06</span>
+  <div class="container">
+    <div class="sec-head" data-reveal>
+      <span class="overline">Avis clients</span>
+      <h2 class="h2">Ils ont boosté,<br>ils témoignent</h2>
+    </div>
+    <div class="t-slider" data-reveal>
+      <div class="t-view">
+        <div class="t-track" id="tTrack">
+          <article class="t-card">
+            <span class="stars"><svg class="icf"><use href="#i-star"/></svg><svg class="icf"><use href="#i-star"/></svg><svg class="icf"><use href="#i-star"/></svg><svg class="icf"><use href="#i-star"/></svg><svg class="icf"><use href="#i-star"/></svg></span>
+            <p class="t-quote">« Ma chaîne YouTube a été vérifiée en moins de 24h. J'ai enfin pu faire mon premier live de vente. Équipe sérieuse et explications claires. »</p>
+            <div class="t-foot"><span class="t-av" style="background:var(--red)">AK</span><div><b>Ama K.</b><span>Couturière, Lomé</span></div></div>
+          </article>
+          <article class="t-card">
+            <span class="stars"><svg class="icf"><use href="#i-star"/></svg><svg class="icf"><use href="#i-star"/></svg><svg class="icf"><use href="#i-star"/></svg><svg class="icf"><use href="#i-star"/></svg><svg class="icf"><use href="#i-star"/></svg></span>
+            <p class="t-quote">« Grâce au compte TikTok monétisable, j'ai rejoint le programme Beta en une semaine. Mes premiers revenus sont tombés le mois suivant. »</p>
+            <div class="t-foot"><span class="t-av" style="background:var(--pink)">KM</span><div><b>Koffi M.</b><span>Créateur de contenu, Kara</span></div></div>
+          </article>
+          <article class="t-card">
+            <span class="stars"><svg class="icf"><use href="#i-star"/></svg><svg class="icf"><use href="#i-star"/></svg><svg class="icf"><use href="#i-star"/></svg><svg class="icf"><use href="#i-star"/></svg><svg class="icf"><use href="#i-star"/></svg></span>
+            <p class="t-quote">« J'ai doublé mes commandes en deux mois après l'optimisation de ma page Instagram. Le suivi après vente est vraiment réel, ils répondent vite. »</p>
+            <div class="t-foot"><span class="t-av" style="background:#0FBDB2">FB</span><div><b>Fatou B.</b><span>Commerçante en ligne, Lomé</span></div></div>
+          </article>
+          <article class="t-card">
+            <span class="stars"><svg class="icf"><use href="#i-star"/></svg><svg class="icf"><use href="#i-star"/></svg><svg class="icf"><use href="#i-star"/></svg><svg class="icf"><use href="#i-star"/></svg><svg class="icf"><use href="#i-star"/></svg></span>
+            <p class="t-quote">« Service propre, livraison rapide et prix honnête. On m'a tout expliqué étape par étape sans jamais demander mon mot de passe. »</p>
+            <div class="t-foot"><span class="t-av" style="background:var(--dark)">YD</span><div><b>Yao D.</b><span>Artiste musicien, Aného</span></div></div>
+          </article>
+          <article class="t-card">
+            <span class="stars"><svg class="icf"><use href="#i-star"/></svg><svg class="icf"><use href="#i-star"/></svg><svg class="icf"><use href="#i-star"/></svg><svg class="icf"><use href="#i-star"/></svg><svg class="icf"><use href="#i-star"/></svg></span>
+            <p class="t-quote">« Je craignais les arnaques en ligne. Ici tout a été transparent : reçu de paiement, preuves de livraison, et un vrai accompagnement. »</p>
+            <div class="t-foot"><span class="t-av" style="background:var(--red)">EA</span><div><b>Esther A.</b><span>Étudiante, Lomé</span></div></div>
+          </article>
+        </div>
+      </div>
+      <div class="t-ctrl">
+        <div class="t-dots" id="tDots"></div>
+        <div class="t-arrows">
+          <button id="tPrev" aria-label="Avis précédent"><svg class="ic" style="transform:rotate(180deg)"><use href="#i-arrow-right"/></svg></button>
+          <button id="tNext" aria-label="Avis suivant"><svg class="ic"><use href="#i-arrow-right"/></svg></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="section" id="faq" style="background:#fff">
+  <span class="sec-num">07</span>
+  <div class="container">
+    <div class="sec-head" style="text-align:center;margin-left:auto;margin-right:auto" data-reveal>
+      <span class="overline" style="justify-content:center">FAQ</span>
+      <h2 class="h2">Questions fréquentes</h2>
+    </div>
+    <div class="faq-wrap">
+      <div class="faq-item" data-reveal>
+        <button class="faq-q">Mes données et mon compte sont-ils en sécurité ?<svg class="ic"><use href="#i-plus"/></svg></button>
+        <div class="faq-a"><div class="faq-a-in"><p>Absolument. Nous ne demandons jamais votre mot de passe. Les validations se font par code officiel envoyé sur votre numéro, et chaque intervention suit les conditions d'utilisation des plateformes.</p></div></div>
+      </div>
+      <div class="faq-item" data-reveal style="--d:.05s">
+        <button class="faq-q">Quels sont les délais de livraison ?<svg class="ic"><use href="#i-plus"/></svg></button>
+        <div class="faq-a"><div class="faq-a-in"><p>La validation YouTube et les comptes TikTok sont livrés en 24 à 48h. Les commandes de vues, likes et abonnés démarrent généralement sous 12h, avec une livraison progressive pour un rendu naturel.</p></div></div>
+      </div>
+      <div class="faq-item" data-reveal style="--d:.1s">
+        <button class="faq-q">Comment puis-je payer ?<svg class="ic"><use href="#i-plus"/></svg></button>
+        <div class="faq-a"><div class="faq-a-in"><p>Par Flooz, T-Money, ou en espèces si vous êtes à Lomé. Un reçu vous est envoyé immédiatement après chaque paiement, avant le démarrage de la prestation.</p></div></div>
+      </div>
+      <div class="faq-item" data-reveal style="--d:.15s">
+        <button class="faq-q">Y a-t-il une garantie ?<svg class="ic"><use href="#i-plus"/></svg></button>
+        <div class="faq-a"><div class="faq-a-in"><p>Oui. Toutes nos prestations incluent une garantie de 7 jours (30 jours sur le pack Growth et Business) : en cas de problème imputable au service, nous remplaçons ou corrigeons sans frais.</p></div></div>
+      </div>
+      <div class="faq-item" data-reveal style="--d:.2s">
+        <button class="faq-q">Puis-je commander pour quelqu'un d'autre ?<svg class="ic"><use href="#i-plus"/></svg></button>
+        <div class="faq-a"><div class="faq-a-in"><p>Bien sûr. Beaucoup de clients commandent pour un membre de famille, un artiste ou leur entreprise. Il suffit de nous mettre en relation avec le titulaire du compte au moment de l'intervention.</p></div></div>
+      </div>
+      <div class="faq-item" data-reveal style="--d:.25s">
+        <button class="faq-q">Travaillez-vous en dehors du Togo ?<svg class="ic"><use href="#i-plus"/></svg></button>
+        <div class="faq-a"><div class="faq-a-in"><p>Oui, nous intervenons dans toute la sous-région (Bénin, Côte d'Ivoire, Sénégal, Burkina...) et partout en francophonie, à distance via WhatsApp. Les paiements internationaux se font par Mobile Money ou transfert.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="section" id="contact">
+  <div class="container">
+    <div class="cta-panel" data-reveal>
+      <div class="glow glow-pink" style="top:-200px;right:-100px"></div>
+      <div class="glow glow-cyan" style="bottom:-220px;left:-120px"></div>
+      <div>
+        <span class="overline" style="color:var(--cyan)">Contact</span>
+        <h2 class="h2">Une question ?<br>Un projet à booster ?</h2>
+        <p class="lead">Écrivez-nous sur WhatsApp : réponse en moins de 5 minutes pendant les heures d'ouverture. Devis gratuit, conseils offerts.</p>
+        <p class="cta-note pk" style="margin-top:18px">On répond vite, promis !</p>
+      </div>
+      <div class="cta-right">
+        <span class="cta-num">+228 90804914</span>
+        <a class="btn btn-wa" href="https://wa.me/22890804914?text=Bonjour%20VIRALAB%2C%20j%27ai%20une%20question." target="_blank" rel="noopener"><svg class="icf"><use href="#i-whatsapp"/></svg> Discuter maintenant</a>
+        <a class="btn btn-light" href="mailto:contact@viralab.tg"><svg class="ic"><use href="#i-mail"/></svg> contact@viralab.tg</a>
+        <span class="mini-chip" style="background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.15);color:#d6d6db"><svg class="ic" style="color:var(--cyan)"><use href="#i-clock"/></svg> Lun - Sam : 8h00 à 20h00</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="container">
+    <div class="f-grid">
+      <div class="f-brand">
+        <a href="#" class="logo"><span class="logo-mark"><svg class="icf" style="width:20px;height:20px"><use href="#i-play"/></svg></span> VIRAL<em>AB</em></a>
+        <p>Le partenaire croissance des créateurs et entrepreneurs africains. Services sociaux premium, rapides et sécurisés, depuis Lomé.</p>
+        <div class="f-social">
+          <a class="yt" href="#" aria-label="YouTube"><svg class="icf"><use href="#i-youtube"/></svg></a>
+          <a class="tt" href="#" aria-label="TikTok"><svg class="icf"><use href="#i-tiktok"/></svg></a>
+          <a class="ig" href="#" aria-label="Instagram"><svg class="icf"><use href="#i-instagram"/></svg></a>
+          <a class="fb" href="#" aria-label="Facebook"><svg class="icf"><use href="#i-facebook"/></svg></a>
+          <a class="xx" href="#" aria-label="X"><svg class="icf"><use href="#i-x"/></svg></a>
+        </div>
+      </div>
+      <div class="f-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#youtube"><svg class="ic"><use href="#i-arrow-right"/></svg> Validation YouTube</a></li>
+          <li><a href="#tiktok"><svg class="ic"><use href="#i-arrow-right"/></svg> TikTok monétisable</a></li>
+          <li><a href="#services"><svg class="ic"><use href="#i-arrow-right"/></svg> Croissance Instagram</a></li>
+          <li><a href="#services"><svg class="ic"><use href="#i-arrow-right"/></svg> Pages & pubs Facebook</a></li>
+          <li><a href="#services"><svg class="ic"><use href="#i-arrow-right"/></svg> Vues, likes & abonnés</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="#services"><svg class="ic"><use href="#i-arrow-right"/></svg> Services</a></li>
+          <li><a href="#process"><svg class="ic"><use href="#i-arrow-right"/></svg> Comment ça marche</a></li>
+          <li><a href="#tarifs"><svg class="ic"><use href="#i-arrow-right"/></svg> Tarifs</a></li>
+          <li><a href="#avis"><svg class="ic"><use href="#i-arrow-right"/></svg> Avis clients</a></li>
+          <li><a href="#faq"><svg class="ic"><use href="#i-arrow-right"/></svg> FAQ</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <h4>Contact</h4>
+        <ul class="f-contact">
+          <li><svg class="ic"><use href="#i-pin"/></svg><div><b>Adresse</b>Lomé, Togo</div></li>
+          <li><svg class="ic"><use href="#i-smartphone"/></svg><div><b>Téléphone / WhatsApp</b>+228 90804914</div></li>
+          <li><svg class="ic"><use href="#i-mail"/></svg><div><b>Email</b>contact@viralab.tg</div></li>
+          <li><svg class="ic"><use href="#i-clock"/></svg><div><b>Horaires</b>Lun - Sam : 8h00 à 20h00</div></li>
+        </ul>
+      </div>
+    </div>
+    <div class="f-bottom">
+      <span>© <span id="year"></span> VIRALAB — Tous droits réservés.</span>
+      <div class="pay-chips"><span>FLOOZ</span><span>T-MONEY</span><span>ESPÈCES</span></div>
+      <span>Fait avec passion à Lomé, Togo</span>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/22890804914?text=Bonjour%20VIRALAB%20!" target="_blank" rel="noopener" aria-label="WhatsApp"><svg class="icf"><use href="#i-whatsapp"/></svg></a>
+<button class="to-top" id="toTop" aria-label="Retour en haut"><svg class="ic"><use href="#i-arrow-right"/></svg></button>
+
+<script>
+// Header + progress + to-top
+const header=document.getElementById('header'),prog=document.getElementById('progress'),toTop=document.getElementById('toTop');
+addEventListener('scroll',()=>{
+  const y=scrollY,h=document.documentElement.scrollHeight-innerHeight;
+  header.classList.toggle('scrolled',y>40);
+  prog.style.width=(y/h*100)+'%';
+  toTop.classList.toggle('show',y>600);
+},{passive:true});
+toTop.onclick=()=>scrollTo({top:0,behavior:'smooth'});
+
+// Mobile menu
+const mm=document.getElementById('mobileMenu');
+document.getElementById('burger').onclick=()=>mm.classList.add('open');
+document.getElementById('mmClose').onclick=()=>mm.classList.remove('open');
+mm.querySelectorAll('a').forEach(a=>a.onclick=()=>mm.classList.remove('open'));
+
+// Reveal
+const ro=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('revealed');ro.unobserve(e.target);}}),{threshold:.15});
+document.querySelectorAll('[data-reveal]').forEach(el=>ro.observe(el));
+
+// Counters
+const co=new IntersectionObserver(es=>es.forEach(e=>{
+  if(!e.isIntersecting)return;co.unobserve(e.target);
+  const el=e.target,end=+el.dataset.count,suf=el.dataset.suffix||'',t0=performance.now();
+  (function tick(t){const p=Math.min((t-t0)/1400,1),v=Math.round(end*(1-Math.pow(1-p,3)));
+    el.textContent=v.toLocaleString('fr-FR')+suf;if(p<1)requestAnimationFrame(tick);})(t0);
+}),{threshold:.6});
+document.querySelectorAll('[data-count]').forEach(el=>co.observe(el));
+
+// Nav active
+const links=[...document.querySelectorAll('#navLinks a')];
+const so=new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting){links.forEach(l=>l.classList.toggle('active',l.getAttribute('href')==='#'+e.target.id));}
+}),{rootMargin:'-45% 0px -50% 0px'});
+['services','youtube','tiktok','tarifs','avis','faq'].forEach(id=>{const s=document.getElementById(id);if(s)so.observe(s);});
+
+// FAQ
+document.querySelectorAll('.faq-q').forEach(b=>b.onclick=()=>{
+  const it=b.parentElement,open=it.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'));
+  if(!open)it.classList.add('open');
+});
+
+// Testimonials slider
+const track=document.getElementById('tTrack'),cards=[...track.children],dots=document.getElementById('tDots');
+let idx=0,visible=3,auto;
+function calc(){const w=track.parentElement.offsetWidth;visible=w>1000?3:w>640?2:1;}
+function maxIdx(){return Math.max(0,cards.length-visible);}
+function buildDots(){dots.innerHTML='';for(let i=0;i<=maxIdx();i++){const b=document.createElement('button');b.onclick=()=>go(i);dots.appendChild(b);}update();}
+function update(){const gap=24,cw=cards[0].getBoundingClientRect().width;track.style.transform=`translateX(${-idx*(cw+gap)}px)`;[...dots.children].forEach((d,i)=>d.classList.toggle('on',i===idx));}
+function go(i){idx=Math.max(0,Math.min(i,maxIdx()));update();}
+document.getElementById('tNext').onclick=()=>go(idx+1);
+document.getElementById('tPrev').onclick=()=>go(idx-1);
+function resetAuto(){clearInterval(auto);auto=setInterval(()=>go(idx>=maxIdx()?0:idx+1),5200);}
+track.parentElement.addEventListener('mouseenter',()=>clearInterval(auto));
+track.parentElement.addEventListener('mouseleave',resetAuto);
+addEventListener('resize',()=>{calc();buildDots();});
+calc();buildDots();resetAuto();
+
+// Year
+document.getElementById('year').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
